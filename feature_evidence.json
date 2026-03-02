@@ -1,0 +1,316 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-apply-a-premium-luxury-automotive-visual-theme-across-the-entire-frontend-deep-charcoal-black-backgrounds-gold-c9a84c-or-similar-as-the-primary-accent-color-crisp-white-typography-and-clean-modern-sans-serif-fonts-use-this-palette-and-tone-consistently-for-all-pages-components-buttons-cards-and-navigation-the-layout-should-feel-high-end-and-trustworthy-suitable-for-a-premium-car-rental-brand",
+      "featureTitle": "Apply a premium, luxury automotive visual theme across the entire frontend: deep charcoal/black backgrounds, gold (#C9A84C or similar) as the primary accent color, crisp white typography, and clean modern sans-serif fonts. Use this palette and tone consistently for all pages, components, buttons, cards, and navigation. The layout should feel high-end and trustworthy, suitable for a premium car rental brand.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-bilingual-support-english-and-arabic-with-rtl-layout-switching-all-user-facing-text-must-be-translatable-a-language-toggle-in-the-header-must-switch-the-ui-language-and-flip-the-layout-direction-ltr-for-english-rtl-for-arabic",
+      "featureTitle": "Implement bilingual support (English and Arabic) with RTL layout switching. All user-facing text must be translatable. A language toggle in the header must switch the UI language and flip the layout direction (LTR for English, RTL for Arabic).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/LanguageToggle.tsx",
+        "frontend/src/contexts/LanguageContext.tsx",
+        "frontend/src/i18n/translations.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-public-car-listings-page-with-a-search-bar-and-filter-controls-filters-must-include-car-category-price-range-transmission-type-seat-count-location-and-availability-dates-display-cars-as-responsive-grid-cards-showing-image-name-daily-rate-and-key-specs-cards-link-to-individual-car-detail-pages",
+      "featureTitle": "Build a public car listings page with a search bar and filter controls. Filters must include: car category, price range, transmission type, seat count, location, and availability dates. Display cars as responsive grid cards showing image, name, daily rate, and key specs. Cards link to individual car detail pages.",
+      "files": [
+        "frontend/src/components/CarCard.tsx",
+        "frontend/src/components/CarFilters.tsx",
+        "frontend/src/pages/CarListingsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-car-detail-page-that-shows-full-car-information-a-real-time-availability-calendar-and-a-dynamic-pricing-calculator-the-calculator-must-update-the-total-cost-based-on-rental-start-end-dates-selected-add-ons-child-seat-additional-driver-unlimited-km-applied-promo-codes-and-selected-currency-show-an-early-payment-discount-when-the-user-opts-to-pay-upfront",
+      "featureTitle": "Build a car detail page that shows full car information, a real-time availability calendar, and a dynamic pricing calculator. The calculator must update the total cost based on rental start/end dates, selected add-ons (child seat, additional driver, unlimited KM), applied promo codes, and selected currency. Show an early payment discount when the user opts to pay upfront.",
+      "files": [
+        "frontend/src/components/AddOnsSelector.tsx",
+        "frontend/src/components/PricingCalculator.tsx",
+        "frontend/src/components/PromoCodeInput.tsx",
+        "frontend/src/pages/CarDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-single-page-booking-flow-after-selecting-dates-and-add-ons-on-the-car-detail-page-the-user-proceeds-through-1-personal-details-form-2-add-ons-confirmation-3-payment-step-with-stripe-integration-on-successful-payment-create-a-booking-record-in-the-backend-and-show-a-confirmation-screen-with-booking-reference",
+      "featureTitle": "Implement a single-page booking flow. After selecting dates and add-ons on the car detail page, the user proceeds through: (1) personal details form, (2) add-ons confirmation, (3) payment step with Stripe integration. On successful payment, create a booking record in the backend and show a confirmation screen with booking reference.",
+      "files": [
+        "frontend/src/pages/BookingFlowPage.tsx",
+        "frontend/src/pages/PaymentFailurePage.tsx",
+        "frontend/src/pages/PaymentSuccessPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-internet-identity-authentication-users-must-authenticate-via-internet-identity-to-access-the-user-dashboard-and-complete-bookings-store-a-user-profile-record-name-email-phone-preferred-language-preferred-currency-linked-to-the-principal-id",
+      "featureTitle": "Implement Internet Identity authentication. Users must authenticate via Internet Identity to access the user dashboard and complete bookings. Store a user profile record (name, email, phone, preferred language, preferred currency) linked to the principal ID.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-user-dashboard-with-four-sections-1-profile-view-and-edit-personal-details-2-booking-history-list-of-all-past-and-upcoming-bookings-with-status-badges-3-invoice-per-booking-invoice-view-with-a-print-download-button-4-cancellation-allow-users-to-cancel-eligible-bookings-and-see-cancellation-status",
+      "featureTitle": "Build a user dashboard with four sections: (1) Profile — view and edit personal details; (2) Booking History — list of all past and upcoming bookings with status badges; (3) Invoice — per-booking invoice view with a print/download button; (4) Cancellation — allow users to cancel eligible bookings and see cancellation status.",
+      "files": [
+        "frontend/src/pages/UserDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-protected-admin-dashboard-accessible-only-to-designated-admin-principals-include-the-following-sections-1-car-management-crud-interface-for-car-records-2-booking-management-view-all-bookings-update-status-process-refunds-3-user-management-list-all-users-view-profiles-and-booking-history-4-promotions-create-and-manage-promo-codes-and-pricing-rules-5-analytics-revenue-summary-bookings-count-and-top-cars-charts",
+      "featureTitle": "Build a protected admin dashboard accessible only to designated admin principals. Include the following sections: (1) Car Management — CRUD interface for car records; (2) Booking Management — view all bookings, update status, process refunds; (3) User Management — list all users, view profiles and booking history; (4) Promotions — create and manage promo codes and pricing rules; (5) Analytics — revenue summary, bookings count, and top cars charts.",
+      "files": [
+        "frontend/src/components/AccessDeniedScreen.tsx",
+        "frontend/src/pages/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-reviews-and-ratings-system-authenticated-users-who-have-completed-a-booking-for-a-car-can-submit-a-1-5-star-rating-and-text-review-display-average-rating-and-individual-reviews-on-each-car-detail-page-admins-can-delete-inappropriate-reviews",
+      "featureTitle": "Implement a reviews and ratings system. Authenticated users who have completed a booking for a car can submit a 1–5 star rating and text review. Display average rating and individual reviews on each car detail page. Admins can delete inappropriate reviews.",
+      "files": [
+        "frontend/src/components/ReviewForm.tsx",
+        "frontend/src/components/ReviewsList.tsx",
+        "frontend/src/pages/CarDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-blog-cms-section-admins-can-create-edit-and-delete-blog-posts-with-a-title-bilingual-body-content-bilingual-cover-image-url-publish-date-and-published-draft-status-the-public-blog-listing-page-shows-published-posts-as-cards-each-post-has-a-detail-page-with-full-content",
+      "featureTitle": "Build a Blog / CMS section. Admins can create, edit, and delete blog posts with a title (bilingual), body content (bilingual), cover image URL, publish date, and published/draft status. The public blog listing page shows published posts as cards. Each post has a detail page with full content.",
+      "files": [
+        "frontend/src/pages/AdminDashboardPage.tsx",
+        "frontend/src/pages/BlogDetailPage.tsx",
+        "frontend/src/pages/BlogListingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-floating-whatsapp-contact-button-visible-on-all-public-pages-clicking-it-opens-a-whatsapp-chat-link-wa-me-with-a-pre-filled-greeting-message-referencing-golden-key-car-rental-the-whatsapp-number-must-be-configurable-by-the-admin",
+      "featureTitle": "Add a floating WhatsApp contact button visible on all public pages. Clicking it opens a WhatsApp chat link (wa.me) with a pre-filled greeting message referencing Golden Key Car Rental. The WhatsApp number must be configurable by the admin.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/WhatsAppButton.tsx",
+        "frontend/src/pages/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-an-in-app-notification-system-when-a-booking-is-created-confirmed-or-cancelled-display-an-in-app-toast-banner-notification-to-the-affected-user-admin-actions-that-change-booking-status-must-trigger-the-notification-store-a-notification-log-per-user-viewable-in-the-user-dashboard",
+      "featureTitle": "Implement an in-app notification system. When a booking is created, confirmed, or cancelled, display an in-app toast/banner notification to the affected user. Admin actions that change booking status must trigger the notification. Store a notification log per user viewable in the user dashboard.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/contexts/NotificationContext.tsx",
+        "frontend/src/pages/UserDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-newsletter-subscription-feature-a-signup-form-name-email-is-available-in-the-site-footer-submissions-are-stored-in-the-backend-admins-can-view-the-subscriber-list-and-export-it-from-the-admin-dashboard",
+      "featureTitle": "Build a newsletter subscription feature. A signup form (name + email) is available in the site footer. Submissions are stored in the backend. Admins can view the subscriber list and export it from the admin dashboard.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/pages/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

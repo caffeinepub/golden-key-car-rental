@@ -1,0 +1,368 @@
+{
+  "kind": "build_request",
+  "title": "Golden Key Car Rental – Full-Stack Booking Platform (Initial Build)",
+  "projectName": "Golden Key Car Rental",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Apply a premium, luxury automotive visual theme across the entire frontend: deep charcoal/black backgrounds, gold (#C9A84C or similar) as the primary accent color, crisp white typography, and clean modern sans-serif fonts. Use this palette and tone consistently for all pages, components, buttons, cards, and navigation. The layout should feel high-end and trustworthy, suitable for a premium car rental brand.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Golden Key Car Rental L.L.C"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share the same charcoal/black + gold color scheme",
+        "Primary CTA buttons use gold accent color",
+        "Typography is consistent and legible on both dark and light sections",
+        "No default browser or template styles are visible"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement bilingual support (English and Arabic) with RTL layout switching. All user-facing text must be translatable. A language toggle in the header must switch the UI language and flip the layout direction (LTR for English, RTL for Arabic).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Multi-language support (Arabic / English with RTL)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Language toggle is visible and accessible in the header on all pages",
+        "Switching to Arabic flips the entire layout to RTL",
+        "Switching to English restores LTR layout",
+        "All labels, buttons, and static text have Arabic and English translations"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a car inventory data model in the backend. Each car record must include: make, model, year, category, daily rate, availability status, location, images array, description (bilingual), fuel type, transmission, seat count, and feature tags. Implement CRUD operations for car records accessible to admins.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Full car management (CRUD)",
+          "Car listings with advanced search & filters"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can create, read, update, and delete car records",
+        "Car record includes all specified fields",
+        "Availability status can be toggled per car",
+        "Data persists across canister upgrades"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a public car listings page with a search bar and filter controls. Filters must include: car category, price range, transmission type, seat count, location, and availability dates. Display cars as responsive grid cards showing image, name, daily rate, and key specs. Cards link to individual car detail pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Car listings with advanced search & filters",
+          "Car detail page with real-time availability"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Listings page renders all available cars from the backend",
+        "All filter controls function and update the displayed list without full page reload",
+        "Each car card shows image, name, price, and key specs",
+        "Clicking a card navigates to the car detail page"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a car detail page that shows full car information, a real-time availability calendar, and a dynamic pricing calculator. The calculator must update the total cost based on rental start/end dates, selected add-ons (child seat, additional driver, unlimited KM), applied promo codes, and selected currency. Show an early payment discount when the user opts to pay upfront.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Car detail page with real-time availability",
+          "Dynamic pricing calculator",
+          "Add-ons (Child seat, additional driver, unlimited KM)",
+          "Early payment discount system",
+          "Promo codes & location-based pricing",
+          "Multi-currency system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Availability calendar blocks out already-booked dates",
+        "Total price updates instantly when dates, add-ons, or currency change",
+        "Valid promo codes apply a discount to the total",
+        "Early payment discount is clearly displayed when selected",
+        "At least 3 currencies are supported (e.g., USD, AED, EUR)"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a single-page booking flow. After selecting dates and add-ons on the car detail page, the user proceeds through: (1) personal details form, (2) add-ons confirmation, (3) payment step with Stripe integration. On successful payment, create a booking record in the backend and show a confirmation screen with booking reference.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Single-page booking flow",
+          "Secure online payment (Stripe/PayPal)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Booking flow is contained in a single page with step indicators",
+        "Stripe payment form is embedded and processes test payments",
+        "On payment success, a booking record is created in the backend",
+        "Confirmation screen displays booking reference number, dates, and car details",
+        "Booked dates are marked unavailable on the car's availability calendar"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build a booking data model in the backend. Each booking must store: booking ID, car ID, user ID, rental start/end dates, add-ons selected, promo code used, total price, currency, payment status, booking status (pending/confirmed/cancelled/completed), and timestamps. Implement query functions for bookings by user and by admin.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Booking management & refunds",
+          "Booking history",
+          "Booking cancellation & tracking"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All specified fields are stored per booking",
+        "Users can query their own bookings",
+        "Admins can query all bookings",
+        "Booking status can be updated by admin or by user (cancellation)"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Implement Internet Identity authentication. Users must authenticate via Internet Identity to access the user dashboard and complete bookings. Store a user profile record (name, email, phone, preferred language, preferred currency) linked to the principal ID.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Profile management",
+          "User Dashboard"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Unauthenticated users are redirected to login before accessing the dashboard",
+        "Internet Identity login/logout works correctly",
+        "User profile is created on first login and can be updated",
+        "Profile data persists across sessions"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Build a user dashboard with four sections: (1) Profile — view and edit personal details; (2) Booking History — list of all past and upcoming bookings with status badges; (3) Invoice — per-booking invoice view with a print/download button; (4) Cancellation — allow users to cancel eligible bookings and see cancellation status.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Profile management",
+          "Booking history",
+          "Invoice generation & download",
+          "Booking cancellation & tracking"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard has a sidebar or tab navigation with all four sections",
+        "Booking history lists all bookings with dates, car name, status, and total",
+        "Invoice page shows itemized cost breakdown and is printable",
+        "Cancellation button is visible on eligible bookings and updates status on confirm"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build a protected admin dashboard accessible only to designated admin principals. Include the following sections: (1) Car Management — CRUD interface for car records; (2) Booking Management — view all bookings, update status, process refunds; (3) User Management — list all users, view profiles and booking history; (4) Promotions — create and manage promo codes and pricing rules; (5) Analytics — revenue summary, bookings count, and top cars charts.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Admin Dashboard",
+          "Full car management (CRUD)",
+          "Booking management & refunds",
+          "User management",
+          "Revenue reports & analytics",
+          "Promotion & pricing management"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Non-admin principals cannot access any admin routes",
+        "Admin can perform full CRUD on car records",
+        "Admin can view and update booking status and mark refunds",
+        "Admin can create, activate, and deactivate promo codes",
+        "Analytics section shows revenue totals and booking counts with basic charts"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Implement a reviews and ratings system. Authenticated users who have completed a booking for a car can submit a 1–5 star rating and text review. Display average rating and individual reviews on each car detail page. Admins can delete inappropriate reviews.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Reviews & ratings system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Only users with a completed booking for that car can submit a review",
+        "Car detail page displays average star rating and list of reviews",
+        "Reviews show reviewer name, rating, date, and comment",
+        "Admin can delete any review from the admin dashboard"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Build a Blog / CMS section. Admins can create, edit, and delete blog posts with a title (bilingual), body content (bilingual), cover image URL, publish date, and published/draft status. The public blog listing page shows published posts as cards. Each post has a detail page with full content.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Blog & CMS pages"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can create, edit, and delete blog posts",
+        "Draft posts are not visible on the public blog",
+        "Blog listing page shows published posts with title, cover image, and date",
+        "Each post has a dedicated detail page with full bilingual content"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add a floating WhatsApp contact button visible on all public pages. Clicking it opens a WhatsApp chat link (wa.me) with a pre-filled greeting message referencing Golden Key Car Rental. The WhatsApp number must be configurable by the admin.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "WhatsApp integration",
+          "WhatsApp Business API integration"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Floating WhatsApp button is visible on all public pages",
+        "Clicking opens WhatsApp with a pre-filled message",
+        "Admin can update the WhatsApp number from the admin dashboard",
+        "Button is accessible on both desktop and mobile"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement a promotions and pricing management system in the backend. Admins can create promo codes with: code string, discount type (percentage or fixed amount), discount value, expiry date, usage limit, and active status. At checkout, users can enter a promo code and the system validates and applies the discount.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Promo codes & location-based pricing",
+          "Promotion & pricing management"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Promo codes are stored with all specified fields",
+        "Expired or usage-limit-reached codes are rejected at checkout",
+        "Valid codes reduce the booking total correctly",
+        "Admin can activate and deactivate codes from the dashboard"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Implement an in-app notification system. When a booking is created, confirmed, or cancelled, display an in-app toast/banner notification to the affected user. Admin actions that change booking status must trigger the notification. Store a notification log per user viewable in the user dashboard.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Real-time notifications (Socket.io)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toast notifications appear for booking creation, confirmation, and cancellation",
+        "User dashboard shows a notification history log",
+        "Notifications include event type, date, and relevant booking reference"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Build a newsletter subscription feature. A signup form (name + email) is available in the site footer. Submissions are stored in the backend. Admins can view the subscriber list and export it from the admin dashboard.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Newsletter & marketing tools"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer newsletter form captures name and email",
+        "Duplicate email submissions are rejected with a clear message",
+        "Admin dashboard shows full subscriber list with timestamps",
+        "Admin can view subscriber count on the analytics overview"
+      ]
+    }
+  ],
+  "constraints": [
+    "All Motoko logic must reside in a single main actor (single-actor architecture)",
+    "Internet Identity is the only supported authentication method — no third-party OAuth",
+    "Real-time WebSocket features (Socket.io) are not supported; use polling or in-app notification log instead",
+    "WhatsApp Business API server-side integration is not supported; implement as a deep-link (wa.me) contact button",
+    "Google Analytics 4, Meta Pixel, Microsoft Clarity, and external SEO tooling cannot be integrated server-side; omit or implement as frontend script tags only if supported",
+    "Excel bulk car import cannot be implemented as a server-side file processor; use CSV parsing in the frontend with batch insert calls to the backend",
+    "PayPal integration is not supported; use Stripe only for payment processing",
+    "Email/SMS notification services (SendGrid, Twilio) are not supported; use in-app notifications only",
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Real-time WebSocket/Socket.io infrastructure",
+    "WhatsApp Business API server-side webhook processing",
+    "Google Analytics 4, Meta Pixel, and Microsoft Clarity server-side event tracking",
+    "PayPal payment gateway",
+    "Email or SMS transactional notifications",
+    "Multi-canister or microservices backend architecture",
+    "Native mobile app (React Native / Flutter)",
+    "Server-side SEO rendering (Next.js / SSR)",
+    "External database integration (PostgreSQL, MySQL, etc.)",
+    "Automated Unit, Integration, and UAT test suites",
+    "Post-launch bug support period (out of build scope)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Golden Key Car Rental logo mark: a stylized golden key icon with elegant serif lettering below reading 'Golden Key', on a transparent background (golden-key-logo.dim_400x120.png)",
+      "Hero banner background: a dramatic night-time shot of a luxury black SUV parked on a glossy wet surface with city lights reflecting, deep dark atmosphere with subtle gold light accents (hero-banner.dim_1920x900.png)",
+      "Car rental fleet showcase strip: three luxury cars side by side — sedan, SUV, and sports car — on a dark studio background with gold rim lighting (fleet-showcase.dim_1200x500.png)",
+      "Empty state illustration: a minimalist golden key icon on a dark background for empty booking history and no-results states (empty-state-icon.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

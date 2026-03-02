@@ -1,0 +1,153 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-01T20:31:49.363Z",
+  "summary": "The diff implements a substantial portion of the Golden Key Car Rental platform. Most core requirements are represented by the added files. However, several important requirements have gaps or are only partially evidenced, and the diff is heavily truncated (21 added files omitted), making it impossible to confirm full implementation of many features. Key concerns include: the WhatsApp number being hardcoded rather than admin-configurable, the car description field lacking bilingual structure, the blog post lacking bilingual title/content fields, the notification booking reference field is unclear, and several backend/frontend pages cannot be confirmed due to truncation.",
+  "missing_requirements": [
+    {
+      "id": "REQ-13",
+      "requirement": "WhatsApp number must be configurable by the admin (Admin can update the WhatsApp number from the admin dashboard)",
+      "reason": "The WhatsAppButton component hardcodes 'const WHATSAPP_NUMBER = 971000000000' with no dynamic fetch from backend or admin configuration mechanism visible anywhere in the diff.",
+      "evidence": [
+        "frontend/src/components/WhatsAppButton.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Car description field must be bilingual",
+      "reason": "The Car type in backend/main.mo defines 'description: Text' as a single Text field rather than a bilingual record (e.g., {en: Text; ar: Text}).",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Blog post title and body content must be bilingual",
+      "reason": "The BlogPost type in backend/main.mo defines 'title: Text' and 'content: Text' as single Text fields rather than bilingual records.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Filter controls must include availability dates",
+      "reason": "CarFilters component exposes category, transmission, location, price range, and seats filters but no availability date range filter is visible in the FilterState interface or rendered controls.",
+      "evidence": [
+        "frontend/src/components/CarFilters.tsx"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "Notifications must include the relevant booking reference",
+      "reason": "The Notification type only has id, userId, message, notificationType, createdAt, and isRead with no explicit bookingReference or bookingId field to satisfy the AC requiring booking reference in notifications.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "requirement": "Admin can export the subscriber list from the admin dashboard",
+      "reason": "No export functionality for the subscriber list is visible in any of the shown files. Admin dashboard page is among the omitted truncated files and cannot be confirmed.",
+      "evidence": []
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Stripe payment form is embedded and processes test payments",
+      "reason": "BookingFlowPage and PaymentSuccessPage routes exist in App.tsx and a Stripe import is present in backend/main.mo, but no Stripe Elements frontend integration code is visible in the diff. The actual Stripe embed implementation cannot be confirmed.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Invoice page shows itemized cost breakdown and is printable/downloadable",
+      "reason": "UserDashboardPage is listed as a route but its implementation is in the omitted files. No invoice component or print/download logic is visible in the shown diff.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Analytics section shows revenue totals and booking counts with basic charts",
+      "reason": "AdminDashboardPage is listed as a route but its implementation is in the omitted files. No analytics chart components are visible in the shown diff.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Admin can view and update booking status and mark refunds",
+      "reason": "Admin dashboard implementation is in the omitted files. Refund marking functionality cannot be confirmed from the shown diff.",
+      "evidence": []
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "ProfileSetupModal that automatically prompts new users to set up their profile on first login via a dialog",
+      "reason": "The build request specifies that user profile is created on first login and can be updated but does not specify a modal dialog flow for profile setup. The ProfileSetupModal is an additional UX pattern not explicitly requested.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "WhatsApp button position flips based on RTL/LTR direction",
+      "reason": "The build request only requires a floating WhatsApp button visible on all pages. The RTL-aware positioning switching between left-6 and right-6 is an enhancement not explicitly specified.",
+      "evidence": [
+        "frontend/src/components/WhatsAppButton.tsx"
+      ]
+    },
+    {
+      "description": "PaymentFailurePage dedicated route and page",
+      "reason": "The build request specifies a booking confirmation screen on payment success but does not mention or require a dedicated payment failure page.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.52,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AccessDeniedScreen.tsx",
+    "frontend/src/components/AddOnsSelector.tsx",
+    "frontend/src/components/CarCard.tsx",
+    "frontend/src/components/CarFilters.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/LanguageToggle.tsx",
+    "frontend/src/components/LoginButton.tsx",
+    "frontend/src/components/PricingCalculator.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/PromoCodeInput.tsx",
+    "frontend/src/components/ReviewForm.tsx",
+    "frontend/src/components/ReviewsList.tsx",
+    "frontend/src/components/WhatsAppButton.tsx",
+    "frontend/src/contexts/LanguageContext.tsx",
+    "frontend/src/contexts/NotificationContext.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/i18n/translations.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AdminDashboardPage.tsx",
+    "frontend/src/pages/BlogDetailPage.tsx",
+    "frontend/src/pages/BlogListingPage.tsx",
+    "frontend/src/pages/BookingFlowPage.tsx",
+    "frontend/src/pages/CarDetailPage.tsx",
+    "frontend/src/pages/CarListingsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PaymentFailurePage.tsx",
+    "frontend/src/pages/PaymentSuccessPage.tsx",
+    "frontend/src/pages/UserDashboardPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "frontend/src/pages/AdminDashboardPage.tsx": "Full admin dashboard with sidebar navigation covering car CRUD, booking management, user management, promotions, analytics charts, blog management, Stripe configuration, WhatsApp settings, and newsletter subscribers. Protected by admin role check using useIsCallerAdmin.",
+  "frontend/src/pages/BlogListingPage.tsx": "Public blog listing page that fetches and displays published blog posts as a responsive card grid sorted by publish date, with empty state and loading skeletons.",
+  "frontend/src/pages/BlogDetailPage.tsx": "Public blog detail page that fetches a single post by ID from route params and renders the cover image hero, title, publish date, and full HTML content with luxury typography styling."
+}
